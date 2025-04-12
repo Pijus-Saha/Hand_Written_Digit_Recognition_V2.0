@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import matplotlib.pyplot as plt
 
 # Load trained model
 model = tf.keras.models.load_model("digit_recognition_model.h5")
@@ -40,8 +41,7 @@ if uploaded_file is not None:
     # Preprocess and predict
     processed_image = preprocess_image(image)
     
-    import matplotlib.pyplot as plt
-    st.subheader("Processed Image")
+    st.subheader("Preprocessed Image")
     st.image(processed_image.reshape(28, 28), width=150, clamp=True)
 
 
@@ -52,4 +52,4 @@ if uploaded_file is not None:
     st.success(f"**Predicted Digit:** {predicted_digit}")
     st.write("Confidence Scores:")
     for i, score in enumerate(prediction[0]):
-        st.write(f"Digit {i}: {score*100:.2f}%")
+        st.write(f"Digit {i}: {score*100:.4f}%")
