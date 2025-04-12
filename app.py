@@ -29,6 +29,7 @@ def preprocess_image(image):
 
 # Streamlit UI
 st.title("📝 Handwritten Digit Recognition V2.0")
+st.write("By Pijus Saha (221-15-5809), Masum Billah (221-15-6002) & Apon Paul (221-15-5896) for AI Lab Project.")
 st.write("Upload a handwritten digit image, and the model will predict the digit.")
 
 # File uploader
